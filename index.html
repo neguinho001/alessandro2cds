@@ -1,210 +1,556 @@
+```html
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Home | Nossa Escola</title>
-<link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Alessandro de Oliveira Borges</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: #080808;
+            color: white;
+        }
+
+        /* MENU */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background: rgba(0, 0, 0, 0.92);
+            border-bottom: 2px solid #ffd000;
+            padding: 15px 30px;
+            z-index: 1000;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1100px;
+            margin: auto;
+        }
+
+        .logo {
+            color: #ffd000;
+            font-size: 22px;
+            font-weight: bold;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 25px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        nav a:hover {
+            color: #ffd000;
+        }
+
+        /* INÍCIO */
+        .inicio {
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 100px 20px 50px;
+            background:
+                radial-gradient(circle at center, #242000 0%, #080808 55%);
+        }
+
+        .inicio-content {
+            max-width: 850px;
+        }
+
+        .inicio h1 {
+            font-size: clamp(40px, 8vw, 80px);
+            color: #ffd000;
+            margin-bottom: 15px;
+            text-shadow: 0 0 25px rgba(255, 208, 0, 0.25);
+        }
+
+        .inicio h2 {
+            font-size: clamp(20px, 4vw, 32px);
+            margin-bottom: 20px;
+        }
+
+        .inicio p {
+            color: #ccc;
+            font-size: 18px;
+            line-height: 1.7;
+        }
+
+        .botao {
+            display: inline-block;
+            margin-top: 30px;
+            padding: 14px 30px;
+            background: #ffd000;
+            color: #000;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 30px;
+            transition: 0.3s;
+        }
+
+        .botao:hover {
+            transform: scale(1.08);
+            box-shadow: 0 0 25px rgba(255, 208, 0, 0.5);
+        }
+
+        /* SEÇÕES */
+        section {
+            padding: 90px 20px;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: auto;
+        }
+
+        .titulo {
+            text-align: center;
+            font-size: 36px;
+            color: #ffd000;
+            margin-bottom: 45px;
+        }
+
+        /* SOBRE */
+        .sobre {
+            background: #101010;
+        }
+
+        .sobre-box {
+            background: #171717;
+            border: 1px solid #292929;
+            border-left: 5px solid #ffd000;
+            border-radius: 15px;
+            padding: 30px;
+            line-height: 1.8;
+            font-size: 18px;
+        }
+
+        .sobre-box strong {
+            color: #ffd000;
+        }
+
+        /* CARDS */
+        .cards {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .card {
+            background: #151515;
+            border: 1px solid #292929;
+            padding: 30px 20px;
+            border-radius: 15px;
+            text-align: center;
+            transition: 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-8px);
+            border-color: #ffd000;
+            box-shadow: 0 10px 30px rgba(255, 208, 0, 0.08);
+        }
+
+        .card .icone {
+            font-size: 45px;
+            margin-bottom: 15px;
+        }
+
+        .card h3 {
+            color: #ffd000;
+            margin-bottom: 10px;
+        }
+
+        .card p {
+            color: #bbb;
+            line-height: 1.6;
+        }
+
+        /* FUTEBOL */
+        .futebol {
+            background: #101010;
+        }
+
+        .futebol-box {
+            text-align: center;
+            padding: 40px 20px;
+            background: linear-gradient(145deg, #181818, #0d0d0d);
+            border-radius: 20px;
+            border: 1px solid #292929;
+        }
+
+        .bola {
+            font-size: 80px;
+            margin-bottom: 15px;
+        }
+
+        .futebol-box h3 {
+            font-size: 30px;
+            color: #ffd000;
+            margin-bottom: 15px;
+        }
+
+        .futebol-box p {
+            color: #ccc;
+            font-size: 18px;
+            line-height: 1.7;
+        }
+
+        /* AMIGOS */
+        .amigos {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .amigo {
+            background: #171717;
+            border: 1px solid #292929;
+            padding: 25px 45px;
+            border-radius: 15px;
+            font-size: 20px;
+            font-weight: bold;
+        }
+
+        .amigo span {
+            color: #ffd000;
+        }
+
+        /* REDES */
+        .redes {
+            background: #101010;
+            text-align: center;
+        }
+
+        .social {
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+            margin-top: 30px;
+        }
+
+        .social a {
+            width: 60px;
+            height: 60px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 50%;
+            background: #191919;
+            border: 2px solid #ffd000;
+            color: white;
+            text-decoration: none;
+            font-size: 27px;
+            transition: 0.3s;
+        }
+
+        .social a:hover {
+            transform: translateY(-8px) rotate(5deg);
+            background: #ffd000;
+            color: #000;
+        }
+
+        /* RODAPÉ */
+        footer {
+            text-align: center;
+            padding: 25px 15px;
+            background: #050505;
+            border-top: 1px solid #222;
+            color: #777;
+        }
+
+        footer strong {
+            color: #ffd000;
+        }
+
+        /* CELULAR */
+        @media (max-width: 700px) {
+
+            header {
+                padding: 12px 15px;
+            }
+
+            nav {
+                flex-direction: column;
+                gap: 10px;
+            }
+
+            nav ul {
+                gap: 12px;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            nav a {
+                font-size: 13px;
+            }
+
+            .cards {
+                grid-template-columns: 1fr;
+            }
+
+            section {
+                padding: 70px 15px;
+            }
+
+            .titulo {
+                font-size: 30px;
+            }
+
+            .sobre-box {
+                padding: 22px;
+                font-size: 16px;
+            }
+
+            .inicio {
+                padding-top: 150px;
+            }
+
+            .social a {
+                width: 55px;
+                height: 55px;
+            }
+        }
+    </style>
 </head>
+
 <body>
-<!--header é a parte do cabeçalho do site, é o topo da página-->
-<header class="cabecalho-itens">
-<img class="cabecalho_imagem" src="logo_nossa_escola.png" alt="Logo da
-Página">
-<h1 class="titulo_site">Nossa Escola</h1>
-<div class="sociais">
-<img class="sociais" src="whatsapp.png" alt="Logo do Whats da
-Escola">
-<img class="sociais" src="facebook.png" alt="Facebook da
-Escola">
-<img class="sociais" src="instagram.png" alt="instagram da
-Escola">
-</div>
-</header>
-<!--Seção banner 1 é a parte do paragrafo 1 da página-->
-<section class="banner1">
-<img class="escola.image" src="paragrafo_1_banner.jpg" alt="Banner da Escola">
-</section>
-<!--Seção estudantes é a parte do paragrafo 2 da página -- "Meninos"-->
-<!--altere em "src="estudante_menino_1.png" para src"nome da imagem do menino em
-todos abaixo-->
-<!--altere em "src="site_school.png" para src"nome da logo em todos abaixo-->
-<!--para aumentar os alunos copie a div no edidor que corresponda desde a foto
-até os icones abaixo - dúvidas chame o professor-->
-<section class="estudante">
-<h1 class="estudante_titulo">Alunos em destaque 2026</h1>
-<p> </p>
-<div class="estudantes_todos">
-<div class="estudante-div">
-<img class="estudante-imagem" src="estudante_menino.png" alt="Foto da
-turma do 1CDS do ano de 2026">
-<h3 class="estudante-nome">Aluno 1</h3>
-<a href="https://cursos.alura.com.br/dashboard">
-<p> </p>
-<img class="estudante-icone" src="logo_nossa_escola.png" alt="Link do Site da
-escola"></a>
-<img class="estudante-icone" src="instagram.png" alt="Link do
-Instagram">
-<img class="estudante-icone" src="facebook.png" alt="Link do Facebook">
-</div>
 
-<div class="estudante-div">
-<img class="estudante-imagem" src="estudante_menino.png" alt="Foto da
-turma do 1CDS do ano de 2026">
-<h3 class="estudante-nome">Aluno 2</h3>
-<a href="https://cursos.alura.com.br/dashboard">
-<p> </p>
-<img class="estudante-icone" src="logo_nossa_escola.png" alt="Link do Site da
-escola"></a>
-<img class="estudante-icone" src="instagram.png" alt="Link do
-Instagram">
-<img class="estudante-icone" src="facebook.png" alt="Link do Facebook">
-</div>
+    <!-- MENU -->
+    <header>
+        <nav>
+            <div class="logo">ALESSANDRO</div>
 
-<div class="estudante-div">
-<img class="estudante-imagem" src="estudante_menino.png" alt="Foto da
-turma do 1CDS do ano de 2026">
-<h3 class="estudante-nome">Aluno 3</h3>
-<a href="https://cursos.alura.com.br/dashboard">
-<p> </p>
-<img class="estudante-icone" src="logo_nossa_escola.png" alt="Link do Site da
-escola"></a>
-<img class="estudante-icone" src="instagram.png" alt="Link do
-Instagram">
-<img class="estudante-icone" src="facebook.png" alt="Link do Facebook">
-</div>
+            <ul>
+                <li><a href="#inicio">Início</a></li>
+                <li><a href="#sobre">Sobre</a></li>
+                <li><a href="#futebol">Futebol</a></li>
+                <li><a href="#amigos">Amigos</a></li>
+                <li><a href="#redes">Redes</a></li>
+            </ul>
+        </nav>
+    </header>
 
-<div class="estudante-div">
-<img class="estudante-imagem" src="estudante_menino.png" alt="Foto da
-turma do 1CDS do ano de 2026">
-<h3 class="estudante-nome">Aluno 4</h3>
-<a href="https://cursos.alura.com.br/dashboard">
-<p> </p>
-<img class="estudante-icone" src="logo_nossa_escola.png" alt="Link do Site da
-escola"></a>
-<img class="estudante-icone" src="instagram.png" alt="Link do
-Instagram">
-<img class="estudante-icone" src="facebook.png" alt="Link do Facebook">
-</div>
 
-<div class="estudante-div">
-<img class="estudante-imagem" src="estudante_menino.png" alt="Foto da
-turma do 1CDS do ano de 2026">
-<h3 class="estudante-nome">Aluno 5</h3>
-<a href="https://cursos.alura.com.br/dashboard">
-<p> </p>
-<img class="estudante-icone" src="logo_nossa_escola.png" alt="Link do Site da
-escola"></a>
-<img class="estudante-icone" src="instagram.png" alt="Link do
-Instagram">
-<img class="estudante-icone" src="facebook.png" alt="Link do Facebook">
-</div>
+    <!-- INÍCIO -->
+    <section class="inicio" id="inicio">
+        <div class="inicio-content">
 
-<div class="estudante-div">
-<img class="estudante-imagem" src="estudante_menino.png" alt="Foto da
-turma do 1CDS do ano de 2026">
-<h3 class="estudante-nome">Aluno 6</h3>
-<a href="https://cursos.alura.com.br/dashboard">
-<p> </p>
-<img class="estudante-icone" src="logo_nossa_escola.png" alt="Link do
-Site da escola"></a>
-<img class="estudante-icone" src="instagram.png" alt="Link do
-Instagram">
-<img class="estudante-icone" src="facebook.png" alt="Link do
-Facebook">
-</div>
-</div>
-</section>
+            <h1>Alessandro</h1>
 
-<!--Seção estudantes é a parte do paragrafo 3 da página -- "Meninas"-->
-<!--altere em "src="estudante_menina_1.png" para src"nome da imagem do menina em
-todas abaixo-->
-<!--altere em "src="site_school.png" para src"nome da logo em todos abaixo-->
-<section class="estudante">
-<div class="estudantes_todos">
-<div class="estudante-div">
-<img class="estudante-imagem" src="estudante_menina.png" alt="Foto da
-turma do 1CDS do ano de 2023">
-<h3 class="estudante-nome">Aluno 1</h3>
-<a href="https://cursos.alura.com.br/dashboard">
-<p> </p>
-<img class="estudante-icone" src="logo_nossa_escola.png" alt="Link do Site da
-escola"></a>
-<img class="estudante-icone" src="instagram.png" alt="Link do Instagram">
-<img class="estudante-icone" src="facebook.png" alt="Link do Facebook">
-</div>
+            <h2>Alessandro de Oliveira Borges</h2>
 
-<div class="estudante-div">
-<img class="estudante-imagem" src="estudante_menina.png" alt="Foto da
-turma do 1CDS do ano de 2023">
-<h3 class="estudante-nome">Aluno 2</h3>
-<a href="https://cursos.alura.com.br/dashboard">
-<p> </p>
-<img class="estudante-icone" src="logo_nossa_escola.png" alt="Link do Site da
-escola"></a>
-<img class="estudante-icone" src="instagram.png" alt="Link do Instagram">
-<img class="estudante-icone" src="facebook.png" alt="Link do Facebook">
-</div>
+            <p>
+                16 anos • Apaixonado por futebol ⚽
+            </p>
 
-<div class="estudante-div">
-<img class="estudante-imagem" src="estudante_menina.png" alt="Foto da
-turma do 1CDS do ano de 2023">
-<h3 class="estudante-nome">Aluno 3</h3>
-<a href="https://cursos.alura.com.br/dashboard">
-<p> </p>
-<img class="estudante-icone" src="logo_nossa_escola.png" alt="Link do Site da
-escola"></a>
-<img class="estudante-icone" src="instagram.png" alt="Link do Instagram">
-<img class="estudante-icone" src="facebook.png" alt="Link do Facebook">
-</div>
+            <p>
+                Bem-vindo ao meu espaço na internet!
+            </p>
 
-<div class="estudante-div">
-<img class="estudante-imagem" src="estudante_menina.png" alt="Foto da
-turma do 1CDS do ano de 2023">
-<h3 class="estudante-nome">Aluno 4</h3>
-<a href="https://cursos.alura.com.br/dashboard">
-<p> </p>
-<img class="estudante-icone" src="logo_nossa_escola.png" alt="Link do Site da
-escola"></a>
-<img class="estudante-icone" src="instagram.png" alt="Link do Instagram">
-<img class="estudante-icone" src="facebook.png" alt="Link do Facebook">
-</div>
+            <a href="#sobre" class="botao">
+                Conheça minha história
+            </a>
 
-<div class="estudante-div">
-<img class="estudante-imagem" src="estudante_menina.png" alt="Foto da
-turma do 1CDS do ano de 2023">
-<h3 class="estudante-nome">Aluno 5</h3>
-<a href="https://cursos.alura.com.br/dashboard">
-<p> </p>
-<img class="estudante-icone" src="logo_nossa_escola.png" alt="Link do Site da
-escola"></a>
-<img class="estudante-icone" src="instagram.png" alt="Link do Instagram">
-<img class="estudante-icone" src="facebook.png" alt="Link do Facebook">
-</div>
+        </div>
+    </section>
 
-<div class="estudante-div">
-<img class="estudante-imagem" src="estudante_menina.png" alt="Foto da turma do
-1CDS do ano de 2023">
-<h3 class="estudante-nome">Aluno 6</h3>
-<a href="https://cursos.alura.com.br/dashboard">
-<p> </p>
-<img class="estudante-icone" src="logo_nossa_escola.png" alt="Link do Site
-da escola"></a>
-<img class="estudante-icone" src="instagram.png" alt="Link do
-Instagram">
-</div>
-</div>
-</section>
-<!--Seção rodapé é a parte final da paragrafo 3 da página-->
-<footer class="escola">
-<img class="logo_rodape" src="logo_nossa_escola.png" alt="Logo da Escola">
-<h2 class="escola-título">Mais informações entre em contato<a class="link"
 
-href="https://wa.me/5541999999999"> 41 9.9999-9999 </a></h2>
-<p></p>
-<p>©2024 | Curso de ADS | Todos os Direitos Reservados.
-Política de Privacidade | Proteção de dados | Encarregado de dados</p>
-<p> </p>
-</footer>
+    <!-- SOBRE -->
+    <section class="sobre" id="sobre">
+        <div class="container">
+
+            <h2 class="titulo">Sobre Mim</h2>
+
+            <div class="sobre-box">
+
+                <p>
+                    Meu nome é <strong>Alessandro de Oliveira Borges</strong>,
+                    tenho <strong>16 anos</strong> e sou uma pessoa que gosta
+                    de aproveitar os momentos, estar com meus amigos e,
+                    principalmente, jogar futebol.
+                </p>
+
+                <br>
+
+                <p>
+                    Meu grande sonho é poder <strong>jogar futebol</strong>
+                    e continuar evoluindo cada vez mais dentro e fora de campo.
+                </p>
+
+                <br>
+
+                <p>
+                    Aqui você pode conhecer um pouco mais sobre mim,
+                    meus interesses e as coisas que fazem parte da minha vida.
+                </p>
+
+            </div>
+
+        </div>
+    </section>
+
+
+    <!-- INTERESSES -->
+    <section id="interesses">
+        <div class="container">
+
+            <h2 class="titulo">Meus Interesses</h2>
+
+            <div class="cards">
+
+                <div class="card">
+                    <div class="icone">⚽</div>
+                    <h3>Futebol</h3>
+                    <p>
+                        Minha maior paixão. Gosto de jogar, treinar
+                        e estar sempre evoluindo.
+                    </p>
+                </div>
+
+                <div class="card">
+                    <div class="icone">🎮</div>
+                    <h3>Games</h3>
+                    <p>
+                        Também curto jogos e tenho interesse em
+                        criar meus próprios projetos.
+                    </p>
+                </div>
+
+                <div class="card">
+                    <div class="icone">💻</div>
+                    <h3>Tecnologia</h3>
+                    <p>
+                        Estou aprendendo a criar páginas e projetos
+                        usando HTML, CSS e tecnologia.
+                    </p>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+
+    <!-- FUTEBOL -->
+    <section class="futebol" id="futebol">
+        <div class="container">
+
+            <h2 class="titulo">Meu Sonho</h2>
+
+            <div class="futebol-box">
+
+                <div class="bola">⚽</div>
+
+                <h3>Jogar Futebol</h3>
+
+                <p>
+                    O futebol é mais do que apenas um esporte para mim.
+                    É uma paixão e um sonho que quero continuar buscando.
+                </p>
+
+                <p style="margin-top: 15px;">
+                    <strong style="color:#ffd000;">
+                        Nunca parar de tentar. Nunca parar de evoluir.
+                    </strong>
+                </p>
+
+            </div>
+
+        </div>
+    </section>
+
+
+    <!-- AMIGOS -->
+    <section id="amigos">
+        <div class="container">
+
+            <h2 class="titulo">Meus Amigos</h2>
+
+            <div class="amigos">
+
+                <div class="amigo">
+                    👊 <span>Alan</span>
+                </div>
+
+                <div class="amigo">
+                    👊 <span>Eduardo</span>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+
+    <!-- REDES -->
+    <section class="redes" id="redes">
+        <div class="container">
+
+            <h2 class="titulo">Minhas Redes</h2>
+
+            <p>
+                Me encontre nas redes sociais 👇
+            </p>
+
+            <div class="social">
+
+                <!-- COLOQUE SEUS LINKS ABAIXO -->
+
+                <a href="#" title="Instagram">
+                    📷
+                </a>
+
+                <a href="#" title="WhatsApp">
+                    💬
+                </a>
+
+                <a href="#" title="Facebook">
+                    f
+                </a>
+
+            </div>
+
+        </div>
+    </section>
+
+
+    <!-- RODAPÉ -->
+    <footer>
+
+        <p>
+            © 2026 <strong>Alessandro de Oliveira Borges</strong>
+        </p>
+
+        <p style="margin-top: 8px;">
+            Feito por Alessandro 💛
+        </p>
+
+    </footer>
+
 </body>
 </html>
+```
