@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Desafio do Alessandro ⚽</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:Arial,Helvetica,sans-serif;background:#080808;color:#fff;min-height:100vh}
+header{background:#050505;border-bottom:2px solid #ffd000;padding:15px 25px}
+nav{max-width:1100px;margin:auto;display:flex;justify-content:space-between;align-items:center}
+.logo{color:#ffd000;font-size:22px;font-weight:bold}
+nav ul{display:flex;gap:22px;list-style:none}
+nav a{color:#fff;text-decoration:none;font-weight:bold}
+nav a:hover{color:#ffd000}
+main{max-width:1000px;margin:auto;padding:45px 20px}
+h1{text-align:center;color:#ffd000;font-size:clamp(35px,7vw,60px);margin-bottom:10px}
+.subtitulo{text-align:center;color:#bbb;margin-bottom:25px}
+.painel{display:flex;justify-content:center;gap:15px;flex-wrap:wrap;margin-bottom:20px}
+.info{background:#171717;border:1px solid #333;border-radius:12px;padding:12px 25px;text-align:center;min-width:130px}
+.info strong{display:block;color:#ffd000;font-size:25px;margin-top:4px}
+button{border:0;border-radius:25px;padding:13px 25px;font-size:16px;font-weight:bold;cursor:pointer;background:#ffd000;color:#000;transition:.2s}
+button:hover{transform:scale(1.05)}
+#iniciar{display:block;margin:0 auto 20px}
+#area-jogo{position:relative;height:520px;max-width:900px;margin:auto;background:linear-gradient(#17601c,#0d3d12);border:3px solid #ffd000;border-radius:20px;overflow:hidden;box-shadow:0 0 25px rgba(255,208,0,.15)}
+#area-jogo::before{content:"";position:absolute;inset:12%;border:2px solid rgba(255,255,255,.5);border-radius:50%}
+#area-jogo::after{content:"";position:absolute;left:0;right:0;top:50%;border-top:2px solid rgba(255,255,255,.5)}
+#bola{position:absolute;display:none;width:70px;height:70px;border-radius:50%;border:3px solid #111;background:#fff;align-items:center;justify-content:center;font-size:42px;cursor:pointer;user-select:none;z-index:5;transition:left .08s,top .08s}
+.mensagem{text-align:center;color:#ccc;min-height:30px;margin:15px 0}
+.instrucoes{max-width:700px;margin:25px auto 0;background:#151515;border:1px solid #292929;border-radius:15px;padding:20px;line-height:1.7;color:#bbb}
+.instrucoes strong{color:#ffd000}
+footer{text-align:center;padding:25px 15px;background:#050505;border-top:1px solid #222;color:#777;margin-top:30px}
+footer strong{color:#ffd000}
+@media(max-width:700px){
+header{padding:12px 10px}
+nav{flex-direction:column;gap:10px}
+nav ul{gap:12px}
+nav a{font-size:13px}
+main{padding:30px 12px}
+#area-jogo{height:450px}
+#bola{width:62px;height:62px;font-size:35px}
+}
+</style>
+</head>
+<body>
+
+<header>
+<nav>
+<div class="logo">ALESSANDRO</div>
+<ul>
+<li><a href="index.html">← Voltar para minha página</a></li>
+</ul>
+</nav>
+</header>
+
+<main>
+<h1>⚽ Desafio do Alessandro</h1>
+<p class="subtitulo">Clique na bola o máximo que conseguir antes do tempo acabar!</p>
+
+<div class="painel">
+<div class="info">Pontos<strong id="pontos">0</strong></div>
+<div class="info">Tempo<strong id="tempo">30</strong></div>
+<div class="info">Recorde<strong id="recorde">0</strong></div>
+</div>
+
+<button id="iniciar">🎮 Começar jogo</button>
+
+<div id="area-jogo">
+<div id="bola" role="button" aria-label="Bola do jogo">⚽</div>
+</div>
+
+<p class="mensagem" id="mensagem">Clique em "Começar jogo" para jogar.</p>
+
+<div class="instrucoes">
+<strong>Como jogar:</strong><br>
+1. Clique em <strong>Começar jogo</strong>.<br>
+2. Clique na ⚽ sempre que ela aparecer em um lugar diferente.<br>
+3. Cada acerto vale <strong>1 ponto</strong>.<br>
+4. Você tem <strong>30 segundos</strong> para fazer sua maior pontuação.<br>
+5. No final, tente bater seu recorde!
+</div>
+</main>
+
+<footer>
+<p>© 2026 <strong>Alessandro de Oliveira Borges</strong></p>
+<p style="margin-top:8px">Meu primeiro jogo em JavaScript ⚽</p>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>

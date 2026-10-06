@@ -4,11 +4,10 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Alessandro de Oliveira Borges</title>
-
 <style>
 *{margin:0;padding:0;box-sizing:border-box;scroll-behavior:smooth}
 body{font-family:Arial,Helvetica,sans-serif;background:#080808;color:#fff}
-header{position:fixed;top:0;left:0;width:100%;background:rgba(0,0,0,.94);border-bottom:2px solid #ffd000;padding:15px 25px;z-index:1000}
+header{position:fixed;top:0;left:0;width:100%;background:rgba(0,0,0,.95);border-bottom:2px solid #ffd000;padding:15px 25px;z-index:1000}
 nav{max-width:1100px;margin:auto;display:flex;justify-content:space-between;align-items:center}
 .logo{color:#ffd000;font-size:22px;font-weight:bold}
 nav ul{display:flex;gap:22px;list-style:none;flex-wrap:wrap;justify-content:center}
@@ -34,7 +33,6 @@ section{padding:90px 20px}
 .icone{font-size:45px;margin-bottom:15px}
 .card h3{color:#ffd000;margin-bottom:10px}
 .card p{color:#bbb;line-height:1.6}
-
 .futebol-box{background:linear-gradient(145deg,#181818,#0d0d0d);border:1px solid #292929;border-radius:20px;padding:30px}
 .futebol-intro{text-align:center;margin-bottom:30px}
 .bola{font-size:70px}
@@ -47,18 +45,20 @@ section{padding:90px 20px}
 .foto-card .legenda{padding:18px;text-align:center}
 .foto-card h4{color:#ffd000;font-size:20px;margin-bottom:7px}
 .foto-card p{color:#aaa;line-height:1.5}
-.neymar{margin-top:35px;text-align:center;color:#aaa;font-size:14px}
+.neymar{margin-top:25px;text-align:center;color:#777;font-size:14px}
 .amigos{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
 .amigo{padding:25px 15px;text-align:center;font-size:20px;font-weight:bold}
 .amigo span{color:#ffd000}
-.foto-julia{width:110px;height:110px;object-fit:cover;border-radius:50%;border:3px solid #ffd000;margin:0 auto 15px;display:block}.julia-card{overflow:hidden}
 .tipo{display:block;color:#888;font-size:14px;margin-top:8px;font-weight:normal}
+.foto-julia{width:110px;height:110px;object-fit:cover;border-radius:50%;border:3px solid #ffd000;margin:0 auto 15px;display:block}
 .social{display:flex;justify-content:center;gap:25px;margin-top:30px}
 .social a{width:60px;height:60px;display:flex;align-items:center;justify-content:center;border-radius:50%;background:#191919;border:2px solid #ffd000;color:#fff;text-decoration:none;font-size:27px;transition:.3s}
 .social a:hover{transform:translateY(-8px) rotate(5deg);background:#ffd000;color:#000}
 footer{text-align:center;padding:25px 15px;background:#050505;border-top:1px solid #222;color:#777}
 footer strong{color:#ffd000}
-
+.jogo-destaque{text-align:center;background:linear-gradient(135deg,#191919,#0d0d0d);border:2px solid #ffd000;border-radius:20px;padding:35px;margin-top:20px}
+.jogo-destaque h3{font-size:30px;color:#ffd000;margin-bottom:12px}
+.jogo-destaque p{color:#ccc;line-height:1.7}
 @media(max-width:700px){
 header{padding:12px 10px}
 nav{flex-direction:column;gap:10px}
@@ -76,7 +76,6 @@ section{padding:70px 15px}
 }
 </style>
 </head>
-
 <body>
 
 <header>
@@ -86,6 +85,7 @@ section{padding:70px 15px}
 <li><a href="#inicio">Início</a></li>
 <li><a href="#sobre">Sobre</a></li>
 <li><a href="#futebol">Futebol</a></li>
+<li><a href="#jogo">Jogo</a></li>
 <li><a href="#pessoas">Pessoas</a></li>
 <li><a href="#redes">Redes</a></li>
 </ul>
@@ -121,7 +121,7 @@ section{padding:70px 15px}
 <div class="cards">
 <div class="card"><div class="icone">⚽</div><h3>Futebol</h3><p>Minha maior paixão. Gosto de jogar, treinar e estar sempre evoluindo.</p></div>
 <div class="card"><div class="icone">🎮</div><h3>Games</h3><p>Também curto jogos e tenho interesse em criar meus próprios projetos.</p></div>
-<div class="card"><div class="icone">💻</div><h3>Tecnologia</h3><p>Estou aprendendo a criar páginas e projetos usando HTML e CSS.</p></div>
+<div class="card"><div class="icone">💻</div><h3>Tecnologia</h3><p>Estou aprendendo a criar páginas e projetos usando HTML, CSS e JavaScript.</p></div>
 </div>
 </div>
 </section>
@@ -129,7 +129,6 @@ section{padding:70px 15px}
 <section class="futebol" id="futebol">
 <div class="container">
 <h2 class="titulo">Meu Sonho: Futebol</h2>
-
 <div class="futebol-box">
 <div class="futebol-intro">
 <div class="bola">⚽</div>
@@ -137,44 +136,36 @@ section{padding:70px 15px}
 <p>O futebol é mais do que apenas um esporte para mim. É uma paixão e um sonho que quero continuar buscando.</p>
 <p style="margin-top:12px"><strong>Nunca parar de tentar. Nunca parar de evoluir.</strong></p>
 </div>
-
 <div class="galeria">
-
 <div class="foto-card">
 <img src="img/alessandro1.jpg" alt="Alessandro jogando futebol">
-<div class="legenda">
-<h4>Eu em campo ⚽</h4>
-<p>Uma das minhas fotos jogando futebol.</p>
+<div class="legenda"><h4>Eu em campo ⚽</h4><p>Uma das minhas fotos jogando futebol.</p></div>
 </div>
-</div>
-
 <div class="foto-card">
 <img src="img/alessandro2.jpg" alt="Alessandro jogando futebol">
-<div class="legenda">
-<h4>Continuando a correr atrás do sonho</h4>
-<p>Cada treino é uma oportunidade para evoluir.</p>
+<div class="legenda"><h4>Correndo atrás do sonho</h4><p>Cada treino é uma oportunidade para evoluir.</p></div>
 </div>
-</div>
-
 <div class="foto-card">
 <img src="img/neymar1.jpg" alt="Neymar jogando pela Seleção Brasileira">
-<div class="legenda">
-<h4>Uma inspiração 🇧🇷</h4>
-<p>Neymar, um jogador que marcou a história do futebol brasileiro.</p>
+<div class="legenda"><h4>Uma inspiração 🇧🇷</h4><p>Neymar como referência no futebol brasileiro.</p></div>
 </div>
-</div>
-
 <div class="foto-card">
 <img src="img/neymar2.jpg" alt="Neymar com a Seleção Brasileira">
-<div class="legenda">
-<h4>Inspiração para continuar</h4>
-<p>Sonhos grandes começam com dedicação, treino e vontade.</p>
+<div class="legenda"><h4>Inspiração para continuar</h4><p>Sonhos grandes começam com dedicação, treino e vontade.</p></div>
 </div>
 </div>
+<p class="neymar">Fotos de Neymar usadas como referência/inspiração.</p>
+</div>
+</div>
+</section>
 
-</div>
-
-<p class="neymar">Fotos de Neymar usadas apenas como referência/inspiração.</p>
+<section id="jogo">
+<div class="container">
+<h2 class="titulo">Meu Jogo 🎮</h2>
+<div class="jogo-destaque">
+<h3>⚽ Desafio do Alessandro</h3>
+<p>Teste sua velocidade e faça o maior número de pontos clicando na bola antes que o tempo acabe!</p>
+<a href="jogo.html" class="botao">🎮 JOGAR AGORA</a>
 </div>
 </div>
 </section>
@@ -183,7 +174,7 @@ section{padding:70px 15px}
 <div class="container">
 <h2 class="titulo">Pessoas Especiais</h2>
 <div class="amigos">
-<div class="amigo julia-card"><img src="img/julia.jpg" alt="Julia" class="foto-julia"><div>❤️ <span>Julia</span></div><small class="tipo">Minha namorada</small></div>
+<div class="amigo"><img src="img/julia.jpg" alt="Julia" class="foto-julia"><div>❤️ <span>Julia</span></div><small class="tipo">Minha namorada</small></div>
 <div class="amigo">👊 <span>Alan</span><small class="tipo">Amigo</small></div>
 <div class="amigo">😊 <span>Luiza</span><small class="tipo">Amiga</small></div>
 <div class="amigo">😊 <span>Bella</span><small class="tipo">Amiga</small></div>
@@ -210,6 +201,5 @@ section{padding:70px 15px}
 <p>© 2026 <strong>Alessandro de Oliveira Borges</strong></p>
 <p style="margin-top:8px">Feito por Alessandro 💛</p>
 </footer>
-
 </body>
 </html>
