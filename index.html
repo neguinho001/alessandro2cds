@@ -21,7 +21,6 @@
             color: white;
         }
 
-        /* MENU */
         header {
             position: fixed;
             top: 0;
@@ -64,7 +63,6 @@
             color: #ffd000;
         }
 
-        /* INÍCIO */
         .inicio {
             min-height: 100vh;
             display: flex;
@@ -115,7 +113,6 @@
             box-shadow: 0 0 25px rgba(255, 208, 0, 0.5);
         }
 
-        /* SEÇÕES */
         section {
             padding: 90px 20px;
         }
@@ -132,7 +129,6 @@
             margin-bottom: 45px;
         }
 
-        /* SOBRE */
         .sobre {
             background: #101010;
         }
@@ -151,7 +147,6 @@
             color: #ffd000;
         }
 
-        /* CARDS */
         .cards {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
@@ -188,7 +183,6 @@
             line-height: 1.6;
         }
 
-        /* FUTEBOL */
         .futebol {
             background: #101010;
         }
@@ -218,28 +212,40 @@
             line-height: 1.7;
         }
 
-        /* AMIGOS */
         .amigos {
-            display: flex;
-            justify-content: center;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
             gap: 20px;
-            flex-wrap: wrap;
         }
 
         .amigo {
             background: #171717;
             border: 1px solid #292929;
-            padding: 25px 45px;
+            padding: 25px 15px;
             border-radius: 15px;
             font-size: 20px;
             font-weight: bold;
+            text-align: center;
+            transition: 0.3s;
+        }
+
+        .amigo:hover {
+            transform: translateY(-6px);
+            border-color: #ffd000;
         }
 
         .amigo span {
             color: #ffd000;
         }
 
-        /* REDES */
+        .tipo {
+            display: block;
+            color: #888;
+            font-size: 14px;
+            margin-top: 8px;
+            font-weight: normal;
+        }
+
         .redes {
             background: #101010;
             text-align: center;
@@ -273,7 +279,6 @@
             color: #000;
         }
 
-        /* RODAPÉ */
         footer {
             text-align: center;
             padding: 25px 15px;
@@ -286,7 +291,6 @@
             color: #ffd000;
         }
 
-        /* CELULAR */
         @media (max-width: 700px) {
 
             header {
@@ -308,7 +312,8 @@
                 font-size: 13px;
             }
 
-            .cards {
+            .cards,
+            .amigos {
                 grid-template-columns: 1fr;
             }
 
@@ -339,217 +344,218 @@
 
 <body>
 
-    <!-- MENU -->
-    <header>
-        <nav>
-            <div class="logo">ALESSANDRO</div>
+<header>
+    <nav>
+        <div class="logo">ALESSANDRO</div>
 
-            <ul>
-                <li><a href="#inicio">Início</a></li>
-                <li><a href="#sobre">Sobre</a></li>
-                <li><a href="#futebol">Futebol</a></li>
-                <li><a href="#amigos">Amigos</a></li>
-                <li><a href="#redes">Redes</a></li>
-            </ul>
-        </nav>
-    </header>
+        <ul>
+            <li><a href="#inicio">Início</a></li>
+            <li><a href="#sobre">Sobre</a></li>
+            <li><a href="#futebol">Futebol</a></li>
+            <li><a href="#amigos">Pessoas</a></li>
+            <li><a href="#redes">Redes</a></li>
+        </ul>
+    </nav>
+</header>
 
+<section class="inicio" id="inicio">
+    <div class="inicio-content">
 
-    <!-- INÍCIO -->
-    <section class="inicio" id="inicio">
-        <div class="inicio-content">
+        <h1>Alessandro</h1>
 
-            <h1>Alessandro</h1>
+        <h2>Alessandro de Oliveira Borges</h2>
 
-            <h2>Alessandro de Oliveira Borges</h2>
+        <p>16 anos • Apaixonado por futebol ⚽</p>
 
-            <p>
-                16 anos • Apaixonado por futebol ⚽
-            </p>
+        <p>Bem-vindo ao meu espaço na internet!</p>
 
-            <p>
-                Bem-vindo ao meu espaço na internet!
-            </p>
+        <a href="#sobre" class="botao">
+            Conheça minha história
+        </a>
 
-            <a href="#sobre" class="botao">
-                Conheça minha história
-            </a>
+    </div>
+</section>
 
-        </div>
-    </section>
+<section class="sobre" id="sobre">
+    <div class="container">
 
+        <h2 class="titulo">Sobre Mim</h2>
 
-    <!-- SOBRE -->
-    <section class="sobre" id="sobre">
-        <div class="container">
-
-            <h2 class="titulo">Sobre Mim</h2>
-
-            <div class="sobre-box">
-
-                <p>
-                    Meu nome é <strong>Alessandro de Oliveira Borges</strong>,
-                    tenho <strong>16 anos</strong> e sou uma pessoa que gosta
-                    de aproveitar os momentos, estar com meus amigos e,
-                    principalmente, jogar futebol.
-                </p>
-
-                <br>
-
-                <p>
-                    Meu grande sonho é poder <strong>jogar futebol</strong>
-                    e continuar evoluindo cada vez mais dentro e fora de campo.
-                </p>
-
-                <br>
-
-                <p>
-                    Aqui você pode conhecer um pouco mais sobre mim,
-                    meus interesses e as coisas que fazem parte da minha vida.
-                </p>
-
-            </div>
-
-        </div>
-    </section>
-
-
-    <!-- INTERESSES -->
-    <section id="interesses">
-        <div class="container">
-
-            <h2 class="titulo">Meus Interesses</h2>
-
-            <div class="cards">
-
-                <div class="card">
-                    <div class="icone">⚽</div>
-                    <h3>Futebol</h3>
-                    <p>
-                        Minha maior paixão. Gosto de jogar, treinar
-                        e estar sempre evoluindo.
-                    </p>
-                </div>
-
-                <div class="card">
-                    <div class="icone">🎮</div>
-                    <h3>Games</h3>
-                    <p>
-                        Também curto jogos e tenho interesse em
-                        criar meus próprios projetos.
-                    </p>
-                </div>
-
-                <div class="card">
-                    <div class="icone">💻</div>
-                    <h3>Tecnologia</h3>
-                    <p>
-                        Estou aprendendo a criar páginas e projetos
-                        usando HTML, CSS e tecnologia.
-                    </p>
-                </div>
-
-            </div>
-
-        </div>
-    </section>
-
-
-    <!-- FUTEBOL -->
-    <section class="futebol" id="futebol">
-        <div class="container">
-
-            <h2 class="titulo">Meu Sonho</h2>
-
-            <div class="futebol-box">
-
-                <div class="bola">⚽</div>
-
-                <h3>Jogar Futebol</h3>
-
-                <p>
-                    O futebol é mais do que apenas um esporte para mim.
-                    É uma paixão e um sonho que quero continuar buscando.
-                </p>
-
-                <p style="margin-top: 15px;">
-                    <strong style="color:#ffd000;">
-                        Nunca parar de tentar. Nunca parar de evoluir.
-                    </strong>
-                </p>
-
-            </div>
-
-        </div>
-    </section>
-
-
-    <!-- AMIGOS -->
-    <section id="amigos">
-        <div class="container">
-
-            <h2 class="titulo">Meus Amigos</h2>
-
-            <div class="amigos">
-
-                <div class="amigo">
-                    👊 <span>Alan</span>
-                </div>
-
-                <div class="amigo">
-                    👊 <span>Eduardo</span>
-                </div>
-
-            </div>
-
-        </div>
-    </section>
-
-
-    <!-- REDES -->
-    <section class="redes" id="redes">
-        <div class="container">
-
-            <h2 class="titulo">Minhas Redes</h2>
+        <div class="sobre-box">
 
             <p>
-                Me encontre nas redes sociais 👇
+                Meu nome é <strong>Alessandro de Oliveira Borges</strong>,
+                tenho <strong>16 anos</strong> e gosto de aproveitar os
+                momentos, estar com as pessoas que fazem parte da minha vida
+                e, principalmente, jogar futebol.
             </p>
 
-            <div class="social">
+            <br>
 
-                <!-- COLOQUE SEUS LINKS ABAIXO -->
+            <p>
+                Meu grande sonho é poder <strong>jogar futebol</strong>
+                e continuar evoluindo cada vez mais dentro e fora de campo.
+            </p>
 
-                <a href="#" title="Instagram">
-                    📷
-                </a>
+            <br>
 
-                <a href="#" title="WhatsApp">
-                    💬
-                </a>
+            <p>
+                Aqui você pode conhecer um pouco mais sobre mim,
+                meus interesses e as pessoas especiais que fazem parte
+                da minha vida.
+            </p>
 
-                <a href="#" title="Facebook">
-                    f
-                </a>
+        </div>
 
+    </div>
+</section>
+
+<section id="interesses">
+    <div class="container">
+
+        <h2 class="titulo">Meus Interesses</h2>
+
+        <div class="cards">
+
+            <div class="card">
+                <div class="icone">⚽</div>
+                <h3>Futebol</h3>
+                <p>
+                    Minha maior paixão. Gosto de jogar, treinar
+                    e estar sempre evoluindo.
+                </p>
+            </div>
+
+            <div class="card">
+                <div class="icone">🎮</div>
+                <h3>Games</h3>
+                <p>
+                    Também curto jogos e tenho interesse em
+                    criar meus próprios projetos.
+                </p>
+            </div>
+
+            <div class="card">
+                <div class="icone">💻</div>
+                <h3>Tecnologia</h3>
+                <p>
+                    Estou aprendendo a criar páginas e projetos
+                    usando HTML e CSS.
+                </p>
             </div>
 
         </div>
-    </section>
 
+    </div>
+</section>
 
-    <!-- RODAPÉ -->
-    <footer>
+<section class="futebol" id="futebol">
+    <div class="container">
+
+        <h2 class="titulo">Meu Sonho</h2>
+
+        <div class="futebol-box">
+
+            <div class="bola">⚽</div>
+
+            <h3>Jogar Futebol</h3>
+
+            <p>
+                O futebol é mais do que apenas um esporte para mim.
+                É uma paixão e um sonho que quero continuar buscando.
+            </p>
+
+            <p style="margin-top: 15px;">
+                <strong style="color:#ffd000;">
+                    Nunca parar de tentar. Nunca parar de evoluir.
+                </strong>
+            </p>
+
+        </div>
+
+    </div>
+</section>
+
+<section id="amigos">
+    <div class="container">
+
+        <h2 class="titulo">Pessoas Especiais</h2>
+
+        <div class="amigos">
+
+            <div class="amigo">
+                ❤️ <span>Julia</span>
+                <small class="tipo">Minha namorada</small>
+            </div>
+
+            <div class="amigo">
+                👊 <span>Alan</span>
+                <small class="tipo">Amigo</small>
+            </div>
+
+            <div class="amigo">
+                😊 <span>Luiza</span>
+                <small class="tipo">Amiga</small>
+            </div>
+
+            <div class="amigo">
+                😊 <span>Bella</span>
+                <small class="tipo">Amiga</small>
+            </div>
+
+            <div class="amigo">
+                😊 <span>Amanda</span>
+                <small class="tipo">Amiga</small>
+            </div>
+
+            <div class="amigo">
+                😊 <span>Kau</span>
+                <small class="tipo">Amiga</small>
+            </div>
+
+            <div class="amigo">
+                💙 <span>Evy</span>
+                <small class="tipo">Minha irmã</small>
+            </div>
+
+        </div>
+
+    </div>
+</section>
+
+<section class="redes" id="redes">
+    <div class="container">
+
+        <h2 class="titulo">Minhas Redes</h2>
 
         <p>
-            © 2026 <strong>Alessandro de Oliveira Borges</strong>
+            Me encontre nas redes sociais 👇
         </p>
 
-        <p style="margin-top: 8px;">
-            Feito por Alessandro 💛
-        </p>
+        <div class="social">
 
-    </footer>
+            <a href="#" title="Instagram">📷</a>
+
+            <a href="#" title="WhatsApp">💬</a>
+
+            <a href="#" title="Facebook">f</a>
+
+        </div>
+
+    </div>
+</section>
+
+<footer>
+
+    <p>
+        © 2026 <strong>Alessandro de Oliveira Borges</strong>
+    </p>
+
+    <p style="margin-top: 8px;">
+        Feito por Alessandro 💛
+    </p>
+
+</footer>
 
 </body>
 </html>
